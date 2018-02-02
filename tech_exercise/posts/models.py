@@ -1,5 +1,6 @@
 from django.db import models
 
+
 categories = (
     ('Technology','Techonology'),
     ('Business', 'Business'),
@@ -12,5 +13,5 @@ class Article(models.Model):
     author = models.CharField(max_length=200, default='Anonymous')
     category = models.CharField(max_length=200, choices=categories, default='technology')
     description = models.CharField(max_length=1000, default='')
-    text = models.CharField(max_length=10000)
+    text = models.TextField(max_length=10000)
     pub_date = models.DateTimeField('data published')

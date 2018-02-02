@@ -25,12 +25,13 @@ SECRET_KEY = 'o=6r$-cb$l+h$*vt%8^!5l(^tm7a%z*w#tr6kyify3xrdb9zqy'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["jonalcsci4830.ddns.net","18.217.162.208", "ec2-18-217-162-208.us-east-2.compute.amazonaws.com"]
+ALLOWED_HOSTS = ["jonalcsci4830.ddns.net","18.217.162.208", "ec2-18-217-162-208.us-east-2.compute.amazonaws.com", "127.0.0.1"]
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'posts.apps.PostsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

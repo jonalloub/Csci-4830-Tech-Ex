@@ -1,0 +1,15 @@
+{% extends 'posts/menu.html' %}
+
+{% block content %}
+
+<div class="col-md-8 mt-5">
+    <h2 class="blog-post-title">{{ article.title }}</h2>
+    <h4 class="font-italic">{{ article.author }}</h4>
+    <h5 class="muted">published {{ article.pub_date }} in {{ article.category }}</h5>
+    <hr>
+    <p class="mt-5">{{ article.text }}</p>
+
+</div>
+
+
+{% endblock %}

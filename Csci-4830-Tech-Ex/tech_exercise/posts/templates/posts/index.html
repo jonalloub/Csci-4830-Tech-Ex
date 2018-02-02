@@ -1,0 +1,38 @@
+{% extends 'posts/menu.html' %}
+
+{% block content %}
+    {% if latest_article %}
+        <div class="jumbotron text-white rounded bg-dark" >
+            <h1 class="display-4 font-italic">{{ latest_article.title }}</h1>
+            <p class="lead">{{ latest_article.description }}</p>   
+            <div class="muted mt-3 font-italic">published in {{ latest_article.category }} by {{ latest_article.author }}</div>        
+            <p class="lead mt-2">
+                <a class="btn btn-primary btn-lg mt-3" href="/{{ latest_article.id }}/" role="button">Read more...</a>
+            </p>
+        </div>
+    {% else %}
+        <p>No articles available.</p>
+    {% endif %}
+
+    {% if latest_article %}
+        <div class="row mb-2">
+           
+        {% for article in latest_article_list %}        
+            <div class="col-sm-12 mt-2">
+                    <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title text-dark">{{ article.title }}</h5>
+                        <div class="muted">{{ article.pub_date }}</div>
+                        <p class="card-text">{{ article.description }}</p>
+                        <div class="muted mt-3 font-italic">published in {{ article.category }} by {{ article.author }}</div>
+                        <a href="/{{ article.pk }}" class="btn btn-primary mt-2">Read more</a>
+                    </div>
+                    </div>
+                </div>
+                                        
+        {% endfor %}
+            
+        </div>
+
+    {% endif %}
+{% endblock %}
